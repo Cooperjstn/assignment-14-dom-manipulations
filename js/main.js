@@ -81,8 +81,17 @@ orange.addEventListener('click',mveTwo)
 
 
 // TASK 4 -- Add Guest to List
-var conText = function changeTest ()
-{ form.text.value = form.ul.value }
+var inputEl = document.querySelector("#add-guest input")
+var enteringGuestEl = document.querySelector('#add-guest .guest-list')
+// console.log(inputEl);
+
+var respondToKey = function(evt){
+if(evt.keyCode === 13){
+      console.log('input VAL', evt.target.value )
+      enteringGuestEl.innerHTML += '<li class="guest">' + evt.target.value + '</li>'
+   }
+}
+inputEl.addEventListener('keydown', respondToKey )
 
 // var push = document.getElementById('text');
 // var lisT = document.createElement('li');
